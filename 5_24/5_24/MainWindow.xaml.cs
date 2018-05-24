@@ -42,11 +42,41 @@ namespace _5_24
 
             foreach (TodoItem item in TodoItemList.Children)
             {
-                data += "|"+item.ItemName + "\r\n";
+             // 打勾符號
+            if (item.IsChecked == true)
+                data += "+";
+            else
+                data += "-";
+            data += "|"+item.ItemName + "\r\n";
             }
 
             // 存檔
             System.IO.File.WriteAllText(@"C:\temp\data.txt", data);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 讀檔
+            string[] lines = System.IO.File.ReadAllLines(@"C:\temp\data.txt");
+
+            // 逐行產生元件
+            foreach (string line in lines)
+            {
+                // 用符號分隔
+                string[] parts = line.Split('|');
+
+                // 建立元件
+                TodoItem item = new TodoItem();
+                item.ItemName = parts[1];
+
+                if (parts[0] == "+")
+                    item.IsChecked = true;
+                else
+                    item.IsChecked = false;
+
+                // 放入到 StackPanel
+                TodoItemList.Children.Add(item);
+            }
         }
     }
 }

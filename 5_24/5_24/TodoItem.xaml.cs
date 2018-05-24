@@ -37,6 +37,13 @@ namespace _5_24
                     CheckMark.Visibility = Visibility.Collapsed;
                 }
             }
+            get
+            {
+                if (CheckMark.Visibility == Visibility)
+                    return true;
+                else
+                    return false;
+            }
         }
         public string ItemName
 
@@ -46,6 +53,7 @@ namespace _5_24
                 return ItemNameTb.Text;
             }
         }
+
         private void CheckBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (CheckMark.Visibility == Visibility)
@@ -56,6 +64,6 @@ namespace _5_24
             {
                 CheckMark.Visibility = Visibility.Visible;
             }
-        }
+                    }
     }
 }
