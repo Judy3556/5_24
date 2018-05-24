@@ -38,6 +38,14 @@ namespace _5_24
                 }
             }
         }
+        public string ItemName
+
+        {
+            get
+            {
+                return ItemNameTb.Text;
+            }
+        }
         private void CheckBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (CheckMark.Visibility == Visibility)

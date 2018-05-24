@@ -29,5 +29,24 @@ namespace _5_24
         {
 
         }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TodoItem item = new TodoItem();
+            TodoItemList.Children.Add(item);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            string data = "";
+
+            foreach (TodoItem item in TodoItemList.Children)
+            {
+                data += "|"+item.ItemName + "\r\n";
+            }
+
+            // 存檔
+            System.IO.File.WriteAllText(@"C:\temp\data.txt", data);
+        }
     }
 }

@@ -33,6 +33,6 @@
                 </Rectangle>
             </Canvas>
         </Grid>
-
+        <TextBox x:Name="ItemNameTb" Grid.Column="1" VerticalContentAlignment="Center" BorderThickness="0">New Task</TextBox>
     </Grid>
 </UserControl>

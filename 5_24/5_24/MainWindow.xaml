@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_5_24"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Closed="Window_Closed">
     <Grid >
-
-        <StackPanel>
-            <local:TodoItem ></local:TodoItem>
-
-            <local:TodoItem></local:TodoItem>
-            <local:TodoItem></local:TodoItem>
-            <local:TodoItem></local:TodoItem>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TodoItemList">
+              
         </StackPanel>
+        <Button Grid.Row="1" x:Name="AddBtn" Click="AddBtn_Click">Add</Button>
     </Grid>
 </Window>
